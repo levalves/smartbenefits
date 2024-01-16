@@ -21,8 +21,8 @@ source "$__BUILD_TOOLS_PATH/scripts/aws_credentials.sh"
 
 COMMIT_HASH=${COMMIT_HASH:-$(git log --pretty=format:%h -n 1)}
 
-REPO="my-app-dot-net-$ENV"
-SECRET_NAME="my-app-dot-net"
+REPO="smartbenefits-front-$ENV"
+SECRET_NAME="smartbenefits-front"
 
 f_log "COMMIT_HASH is set to $COMMIT_HASH"
 export TF_VAR_commit_hash="$COMMIT_HASH"

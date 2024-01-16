@@ -11,7 +11,7 @@ variable "business_owner" {
 # }
 
 variable "application" {
-  default = "my-app-dot-net"
+  default = "smartbenefits-front"
 }
 
 variable "domain_zone_id" {}

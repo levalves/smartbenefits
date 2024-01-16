@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     region = "us-east-2"
     bucket = "levalves-terraform-tfstates"
-    key    = "my-app-dot-net/terraform.tfstate"
+    key    = "smartbenefits-front/terraform.tfstate"
   }
 }
 
