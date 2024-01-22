@@ -14,14 +14,14 @@ rm -f $LOG_FILE
 source "$__BUILD_TOOLS_PATH/scripts/log.sh"
 source "$__BUILD_TOOLS_PATH/scripts/terraform.sh"
 source "$__BUILD_TOOLS_PATH/scripts/docker.sh"
-source "$__BUILD_TOOLS_PATH/scripts/check-ecs-deployment.sh"
-source "$__BUILD_TOOLS_PATH/scripts/shell_overrides.sh"
-source "$__BUILD_TOOLS_PATH/scripts/secrets.sh"
+# source "$__BUILD_TOOLS_PATH/scripts/check-ecs-deployment.sh"
+# source "$__BUILD_TOOLS_PATH/scripts/shell_overrides.sh"
+# source "$__BUILD_TOOLS_PATH/scripts/secrets.sh"
 source "$__BUILD_TOOLS_PATH/scripts/aws_credentials.sh"
 
 COMMIT_HASH=${COMMIT_HASH:-$(git log --pretty=format:%h -n 1)}
 
-REPO="smartbenefits-front-$ENV"
+REPO="its-stg-smartbenefits-front"
 SECRET_NAME="smartbenefits-front"
 
 f_log "COMMIT_HASH is set to $COMMIT_HASH"
@@ -120,7 +120,8 @@ f_build_apply() {
   f_terraform_init
   f_get_role
   # set_aws_credentials $ROLE
-  terraform_apply $ENV "$PWD/terraform" $COMMIT_HASH f_post_apply
+  #terraform_apply $ENV "$PWD/terraform" $COMMIT_HASH f_post_apply
+  terraform_apply $ENV "$PWD/terraform" $COMMIT_HASH
 }
 
 f_destroy_testplan() {

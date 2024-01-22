@@ -78,6 +78,8 @@ deployment/terraform/.terraform
 deployment/terraform/terraform.tfstate.d
 deployment/terraform/.terraform_init.lock
 deployment/terraform/.terraform.lock.hcl
+deployment/terraform/*.bkp
+
 
 # Docker-Compose dependencies
 .postgres/
